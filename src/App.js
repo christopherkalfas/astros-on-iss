@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { fetchAstronauts } from './actions/fetchAstronauts'
+import './App.css' 
  
 class App extends Component {
  
@@ -9,10 +10,12 @@ class App extends Component {
   }
  
   render() {
-    const astronauts = this.props.astronauts.map(astro => <li key={astro.id}>{astro.name}</li>);
+    const astronauts = this.props.astronauts.map((astro, i) => <li key={i}>{astro.name}</li>);
  
     return(
-     <div>{astronauts}</div>
+      <div className='container'>
+        <div>{astronauts}</div>
+      </div>
     );
   }
 };
